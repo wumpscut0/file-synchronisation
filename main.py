@@ -7,10 +7,10 @@ from queue import Queue
 def launch_app():
     queue = Queue()
     events_hash = {
-        'token_set_event': Event(),
-        'interval_set_event': Event(),
-        'local_folder_set_event': Event(),
-        'exit_event': Event(),
+        "token_set_event": Event(),
+        "interval_set_event": Event(),
+        "local_folder_set_event": Event(),
+        "exit_event": Event(),
     }
 
     gui_thread = Thread(target=lambda: Gui(queue, events_hash))
@@ -19,5 +19,5 @@ def launch_app():
     synch_thread.start()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     launch_app()
